@@ -559,19 +559,19 @@ app.get("/customers", async (req, res) => {
 
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
-
+console.log(email);
   try {
-    const { data, error } = await supabase
-      .from("websiteusers")
-      .select("*")
-      .eq("email", email)
-      .single();
+ const { data, error } = await supabase
+  .from("websiteusers")
+  .select("*")
+  .eq("email", email)
+  .single();
 
-    if (error || !data || data.password !== password) {
-      return res
-        .status(401)
-        .send({ success: false, message: "Invalid email or password." });
-    }
+if (error || !data) {
+  console.error("Supabase error:", error);
+  return res.status(401).send({ success: false, message: "Email not found or invalid." });
+}
+
 
     // Generate a JWT with email and stripe_customer_id
     console.log(email);
