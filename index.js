@@ -28,7 +28,6 @@ const stripeInstance = stripe(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 const port = process.env.PORT || 4000;
-app.use(cors());
 // Middleware
  app.use(cors({ origin: "https://airosofts.com" })); // Restrict to your domain
 app.use(express.static(path.join(__dirname))); // Serve static files
@@ -559,27 +558,35 @@ app.get("/customers", async (req, res) => {
 
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
-console.log(email);
+console.log("email received from login page is given as:", email);
   try {
- const { data, error } = await supabase
-  .from("websiteusers")
-  .select("*")
-  .eq("email", email)
-  .single();
+    const { data, error } = await supabase
+      .from("websiteusers")
+      .select("*")
+      .eq("email", email)
+      .single();
 
-if (error || !data) {
-  console.error("Supabase error:", error);
-  return res.status(401).send({ success: false, message: "Email not found or invalid." });
-}
+    if (error || !data) {
+      console.error("Supabase error:", error);
+      return res
+        .status(401)
+        .send({ success: false, message: "Invalid email or password." });
+    }
 
+    if (data.password !== password) {
+      return res
+        .status(401)
+        .send({ success: false, message: "Invalid email or password." });
+    }
 
-    // Generate a JWT with email and stripe_customer_id
-    console.log(email);
+    console.log("User authenticated:", data.email);
+
     res.send({
       success: true,
-      email:email,
+      email: data.email,
       redirectUrl: "https://web.airosofts.com/dashboard.html",
     });
+
 
   } catch (error) {
     console.error("Error validating user:", error);
