@@ -12,7 +12,37 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
-  <body class="bg-gray-50 h-screen">
+  <style>
+      #app {
+        display: none; /* Initially hide the entire page content */
+      }
+    </style>
+      <script>
+      // Function to check login status
+      function checkLogin() {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        const mailAccount = localStorage.getItem("mailaccount");
+
+        if (isLoggedIn && mailAccount) {
+          return true; // User is authenticated
+        } else {
+          return false; // User is not authenticated
+        }
+      }
+
+      // Initialize the app
+      document.addEventListener("DOMContentLoaded", () => {
+        if (checkLogin()) {
+          // User is logged in, show the content
+          document.getElementById("app").style.display = "block";
+        } else {
+          // User is not logged in, redirect to login
+          window.location.href = "https://web.airosofts.com/login.html";
+        }
+      });
+    </script>
+
+  <body class="bg-gray-50 h-screen"  id="app">
     <!-- Mobile Header -->
     <header
       class="bg-gray-900 text-white fixed top-0 left-0 w-full flex items-center justify-between px-4 py-3 md:hidden z-50"
@@ -979,9 +1009,4 @@
     window.location.href = "https://web.airosofts.com/login.html";
   }
 </script>
-<script>
-  if(!localStorage.getItem("isLoggedIn") || !localStorage.getItem("mailaccount")){
-    window.location.href = "https://web.airosofts.com/login.html";
 
-  }
-</script>
