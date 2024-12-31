@@ -57,7 +57,7 @@
             // Check if the user is already logged in when the page loads
             window.onload = function() {
               if (localStorage.getItem('isLoggedIn') === 'true') {
-                window.location.href = 'https://app.airosofts.com/dashboard.html'; // Redirect to the dashboard
+                window.location.href = 'https://web.airosofts.com/dashboard.html'; // Redirect to the dashboard
               }
             };
             
@@ -75,7 +75,7 @@
               try {
                 console.log("API Call Triggered"); // Debug log
             
-                const response = await fetch('http://app.airosofts.com/login', {
+                const response = await fetch('http://web.airosofts.com/login', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',
