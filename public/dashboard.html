@@ -829,7 +829,7 @@
                     );
 
                     setTimeout(() => {
-                      window.location.href = "https://login.airosofts.com";
+                      window.location.href = "https://app.airosofts.com/login.html";
                     }, 3000);
                   }
                 })
@@ -972,12 +972,12 @@
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("mailaccount");
 
-    window.location.href = "https://login.airosofts.com";
+    window.location.href = "https://app.airosofts.com/login.html";
   }
 </script>
 <script>
   if(!localStorage.getItem("isLoggedIn") || !localStorage.getItem("mailaccount")){
-    window.location.href = "https://login.airosofts.com";
+    window.location.href = "https://app.airosofts.com/login.html";
 
   }
 </script>
