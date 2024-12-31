@@ -61,48 +61,45 @@
               }
             };
             
-            async function handleLogin(event) {
-              event.preventDefault(); // Prevent form submission reload
-            
-              const email = document.getElementById('email').value;
-              const password = document.getElementById('password').value;
-              const errorBox = document.getElementById('error-box');
-            
-              // Clear previous error messages
-              errorBox.textContent = '';
-              errorBox.style.display = 'none';
-            
-              try {
-                console.log("API Call Triggered"); // Debug log
-            
-                const response = await fetch('http://web.airosofts.com/login', {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify({ email, password }),
-                });
-            
-                const result = await response.json();
-            
-                if (result.success) {
-                  // Store the login status in localStorage
-                  localStorage.setItem('isLoggedIn', 'true');
-                  localStorage.setItem('mailaccount', result.email);
+          async function handleLogin(event) {
+  event.preventDefault();
 
-                  window.location.href = result.redirectUrl; // Redirect to the dashboard
-                } else {
-                  // Display error message in a lighter red box with improved font and padding
-                  errorBox.textContent = result.message;
-                  errorBox.style.display = 'block';
-                }
-              } catch (err) {
-                // Display a generic error message if API call fails
-                errorBox.textContent = 'An error occurred. Please try again.';
-                errorBox.style.display = 'block';
-                console.error('Error during login:', err); // Debug log
-              }
-            }
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!email || !password) {
+    displayError("Please enter both email and password.");
+    return;
+  }
+
+  try {
+    const response = await fetch("http://web.airosofts.com/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("mailaccount", result.email);
+      window.location.href = result.redirectUrl;
+    } else {
+      displayError(result.message);
+    }
+  } catch (err) {
+    displayError("An error occurred. Please try again.");
+    console.error("Login error:", err);
+  }
+}
+
+function displayError(message) {
+  const errorBox = document.getElementById("error-box");
+  errorBox.textContent = message;
+  errorBox.style.display = "block";
+}
+
             </script>
             
           
