@@ -586,7 +586,7 @@ app.post("/login", async (req, res) => {
     res.status(500).send({ success: false, message: "Internal server error." });
   }
 });
-app.post("/api/change-password", async (req, res) => {
+app.get("/api/change-password", async (req, res) => {
   const { currentPassword, newPassword } = req.body;
   let mailAccount = req.headers.mailaccount;
 
