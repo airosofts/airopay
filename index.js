@@ -593,7 +593,7 @@ console.log("email received from login page is given as:", email);
     res.status(500).send({ success: false, message: "Internal server error." });
   }
 });
-app.get("/api/change-password", async (req, res) => {
+app.post("/api/change-password", async (req, res) => {
   const { currentPassword, newPassword } = req.body;
   let mailAccount = req.headers.mailaccount;
 
