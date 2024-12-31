@@ -100,12 +100,12 @@ async function sendProfessionalEmail(email, password) {
 }
 
 const plans = {
-  prod1_basic: "price_1QbWMxG8ztKaoxw1xzE9ziiE",
-  prod1_pro: "price_1QbWNMG8ztKaoxw1vQpSMZqY",
-  prod1_professional: "price_1QbWNmG8ztKaoxw1Z19xCzdH",
-  prod2_basic: "price_1QboJ3G8ztKaoxw1mNpNfjCe",
-  prod2_pro: "price_1QboJ3G8ztKaoxw1bbYC0GuI",
-  prod2_professional: "price_1QboJ3G8ztKaoxw15oEULSBc",
+  prod1_basic: "price_1QbWIuG8ztKaoxw1inMOYkwT",
+  prod1_pro: "price_1QbWIuG8ztKaoxw1YtAnMOdj",
+  prod1_professional: "price_1QbWIuG8ztKaoxw1ypp0JJwa",
+  prod2_basic: "price_1Qc7BzG8ztKaoxw1WFzSru96",
+  prod2_pro: "price_1Qc7BzG8ztKaoxw1uggFgeaN",
+  prod2_professional: "price_1Qc7BzG8ztKaoxw101cg7lwY",
 };
 
 
