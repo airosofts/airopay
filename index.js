@@ -29,7 +29,7 @@ const stripeInstance = stripe(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const port = process.env.PORT || 4000;
 // Middleware
- app.use(cors({ origin: "https://airosofts.com" })); // Restrict to your domain
+// app.use(cors({ origin: "https://airosofts.com" })); // Restrict to your domain
 app.use(express.static(path.join(__dirname))); // Serve static files
 app.use(cors()); // Allow cross-origin requests
 app.use(express.json()); // Parse JSON bodies
