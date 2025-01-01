@@ -72,7 +72,7 @@ async function sendProfessionalEmail(email, password) {
 
           <p style="font-size: 16px; margin-bottom: 20px;">You can log in to your dashboard to access your purchased products:</p>
           <div style="text-align: center; margin-top: 20px;">
-            <a href="https://portal.airosofts.com/dashboard.html" style="background-color: #D74B3F; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-size: 16px; font-weight: bold; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);">Login to Dashboard</a>
+            <a href="https://web.airosofts.com/dashboard.html" style="background-color: #D74B3F; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-size: 16px; font-weight: bold; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);">Login to Dashboard</a>
           </div>
         </div>
 
@@ -402,7 +402,7 @@ async function sendExistingUserEmail(email) {
           <p style="font-size: 16px; margin-bottom: 20px;">As you are already an existing user, you can log in to your dashboard to access your purchased products and manage your subscription:</p>
 
           <div style="text-align: center; margin-top: 20px;">
-            <a href="https://portal.airosofts.com/dashboard.html" style="background-color: #D74B3F; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-size: 16px; font-weight: bold; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);">Login to Dashboard</a>
+            <a href="https://web.airosofts.com/dashboard.html" style="background-color: #D74B3F; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-size: 16px; font-weight: bold; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);">Login to Dashboard</a>
           </div>
         </div>
 
@@ -584,7 +584,7 @@ console.log("email received from login page is given as:", email);
     res.send({
       success: true,
       email: data.email,
-      redirectUrl: "https://portal.airosofts.com/dashboard.html",
+      redirectUrl: "https://web.airosofts.com/dashboard.html",
     });
 
 
