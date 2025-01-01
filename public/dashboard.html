@@ -37,7 +37,7 @@
           document.getElementById("app").style.display = "block";
         } else {
           // User is not logged in, redirect to login
-          window.location.href = "https://portal.airosofts.com/login.html";
+          window.location.href = "https://web.airosofts.com/login.html";
         }
       });
     </script>
@@ -178,7 +178,7 @@
             async function fetchUserDetails() {
               try {
                 const response = await fetch(
-                  "https://portal.airosofts.com/api/user-details",
+                  "https://web.airosofts.com/api/user-details",
                   {
                     method: "GET", // Specify the HTTP method
     headers: {
@@ -708,7 +708,7 @@
             async function managesubscription() {
               try {
                 const response = await fetch(
-                  `https://portal.airosofts.com/customers`,
+                  `https://web.airosofts.com/customers`,
                   {
                   method: "GET", // Specify the HTTP method
     headers: {
@@ -845,7 +845,7 @@
               }
 
               // Call API
-              fetch("https://portal.airosofts.com/api/change-password", {
+              fetch("https://web.airosofts.com/api/change-password", {
                 method: "POST", // Specify the HTTP method
     headers: {
       "Content-Type": "application/json",
@@ -867,7 +867,7 @@
                     );
 
                     setTimeout(() => {
-                      window.location.href = "https://portal.airosofts.com/login.html";
+                      window.location.href = "https://web.airosofts.com/login.html";
                     }, 3000);
                   }
                 })
@@ -1010,6 +1010,6 @@
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("mailaccount");
 
-    window.location.href = "https://portal.airosofts.com/login.html";
+    window.location.href = "https://web.airosofts.com/login.html";
   }
 </script>
