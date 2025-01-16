@@ -100,12 +100,18 @@ async function sendProfessionalEmail(email, password) {
 }
 
 const plans = {
-  prod1_basic: "price_1QbWIuG8ztKaoxw1inMOYkwT",
-  prod1_pro: "price_1QbWIuG8ztKaoxw1YtAnMOdj",
+  prod1_basic: "price_1QhnGOG8ztKaoxw1rgsjb1Bu",
+  prod1_expert: "price_1QbWIuG8ztKaoxw1YtAnMOdj",
   prod1_professional: "price_1QbWIuG8ztKaoxw1ypp0JJwa",
-  prod2_basic: "price_1Qc7BzG8ztKaoxw1WFzSru96",
-  prod2_pro: "price_1Qc7BzG8ztKaoxw1uggFgeaN",
+  prod1_basicasia:"price_1QhnNvG8ztKaoxw103Ea3buu",
+  prod1_expertasia:"price_1QhnODG8ztKaoxw1zKJrgyqb",
+  prod1_professionalasia:"price_1QhnOdG8ztKaoxw1YsjNWwfy"
+  prod2_basic: "price_1QhnIEG8ztKaoxw1o9W4qocQ",
+  prod2_expert: "price_1Qc7BzG8ztKaoxw1uggFgeaN",
   prod2_professional: "price_1Qc7BzG8ztKaoxw101cg7lwY",
+  prod2_basicasia:"price_1QhnVRG8ztKaoxw15QRABeyA",
+  prod2_expertasia:"price_1QhnVlG8ztKaoxw1TCd8bCjG",
+  prod2_professionalasia:"price_1QhnWBG8ztKaoxw1HgjQG6EO"
 };
 
 
